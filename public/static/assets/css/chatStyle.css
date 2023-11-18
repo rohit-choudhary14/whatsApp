@@ -1,0 +1,283 @@
+    a{
+        color:#111;
+    }
+    #chatting_profile_body{
+        width:35%;
+        height:100%;
+        position: fixed;
+        filter: saturate(1.5);
+        top:0px;
+        bottom:0px;
+        transition: 1s left;
+        background-image: url("/assets/images/bg-chat-tile-dark_a4be512e7195b6b733d9110b408f075d.png");
+        background-color: #f8f3ea;
+        overflow-y: scroll;
+        z-index: 10;
+       
+    }
+    #chatting_profile_header{
+        filter: saturate(1.5);
+        display: flex;
+        padding: 0.3rem;
+        background: #008069;
+        color: white;
+        position: fixed;
+        width: 100%;  
+        box-shadow: 1px 1px 10px rgb(0,0,0,0.2);
+       z-index: 20;
+    }
+    
+    #chatting_profile_header div:nth-child(1){
+        position: relative;
+        margin-top: 10px;
+         
+    }
+    #chatting_profile_header div:nth-child(3){
+        position: absolute;
+        right:65%;
+        top: 25px;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        align-content: center;
+         
+    }
+
+   
+    #info_ab_chat_enc{
+        padding: 1rem;
+        padding-top: 7rem;
+    }
+     #info_ab_chat_enc div:nth-child(1){
+        box-shadow:1px 0px 4px rgb(0,0,0,0.2);
+        display: flex;
+        background: #ffeecd;
+        padding: 1rem;
+        font-size:10px;
+        border-radius: 10px;
+    }
+    #trigger_message_bottom{
+        position: fixed;
+        width:35%;
+        background:transparent;
+        padding: 1rem;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 10px;
+        z-index: 25;
+        /* box-shadow:inset 0px 0px 0px 90px rgb(0,0,0,0.2); */
+    }
+    #trigger_message_bottom div:nth-child(1){
+        display: flex;
+        justify-content: space-between;
+        width:87%
+    }
+      
+    #trigger_message_bottom div:nth-child(1) textarea{
+        border-radius:4px;
+        outline:none;
+        white-space: pre-wrap;
+        word-break: break-word;
+        width:100%;
+        border:none;
+        resize: none;
+    }
+    #trigger_message_bottom div:nth-child(1){
+        border-radius:40px;
+        outline:none;
+        padding:0.5rem;
+        white-space: pre-wrap;
+        word-break: break-word;
+        width:100%;
+        border:none;
+        resize: none;
+        background-color: #fff;
+        box-shadow: 0px 0px 3px 2px rgb(0,0,0,0.2);
+    }
+    #trigger_message_bottom div:nth-child(2){
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        background: #008069;
+        color: white;
+        border-radius: 50%;
+        padding:0.8rem;
+        box-shadow: 0px 0px 3px 2px rgb(0,0,0,0.2);
+        filter: saturate(1.5);
+    }
+    #chatting_body_outgoing{
+        padding: 1rem;
+        margin-bottom: 5rem;
+       
+    }
+    #chatting_body_incomming{
+        margin-bottom: 5rem;
+    }
+    .outgoing_msg_box{
+        
+         display: block;
+         text-align: -webkit-right;
+         word-break: break-all;
+         margin-left: 4rem;
+         
+         
+    }
+    .outgoing_msg_box div{
+        background-color: #d9fdd3;
+        border-radius: 7.5px;
+        width: fit-content;
+        padding: 0.2rem;
+        box-shadow: 0px 0px 3px rgb(0,0,0,0.1);
+        font-size: 14.2px;
+        line-height: 19px;
+        color:#111;
+        margin-top:0.5rem;
+        text-align: left;
+    }
+   
+    .incomming_msg_box{
+        
+         display: block;
+         text-align: -webkit-left;
+         word-break: break-all;
+         margin-right: 4rem;
+    }
+    .incomming_msg_box div{
+        background-color: #fff;
+        border-radius: 7.5px;
+        width: fit-content;
+        padding: 0.2rem;
+        box-shadow: 0px 0px 3px rgb(0,0,0,0.1);
+        font-size: 14.2px;
+        line-height: 19px;
+        color:#111;
+        margin-top:0.5rem;
+        text-align: left;
+    }
+    #slide_up{
+        position: absolute;
+        bottom: 140px;
+        right: 68%;
+        z-index: 100;
+        padding: 0.5rem;
+       
+    }
+       
+    
+    #slide_down{
+        position: absolute;
+        bottom: 90px;
+        right: 68%;
+        z-index: 100;
+        padding: 0.5rem;
+       
+    }
+    #selectedImage{
+        max-width: 30%;
+        height: auto;
+        display: block;
+    }
+    #selected_img_model {
+        background-color: #111;
+        position: absolute;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+        z-index: 0;
+        top: 0px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;  
+    }
+
+    #clear_selected_image{
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        position: fixed;
+        z-index:0;
+        top: 5px;
+    }
+    #selected_img_model div:nth-child(1) {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        padding: 2rem;
+    }
+    #action_buttons {
+        position: fixed;
+        width:35%;
+        background: aliceblue;
+        z-index:0;
+        bottom:0px;
+    }
+    #action_buttons div {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    
+    @media only screen and (max-width: 1000px) {
+        #chatting_profile_body{
+          width:100%;
+        }
+        #trigger_message_bottom{
+            width:100%;
+        }
+        #chatting_profile_header div:nth-child(3){
+           right:5px;
+        }
+        #slide_up{
+           right:2%;
+        }
+        #slide_down{
+            right:2%;
+           
+        }
+        #selectedImage{
+            max-width:100%;
+       
+        }
+        #selected_img_model div:nth-child(1) {
+            justify-content:center;
+        
+        }
+        #action_buttons {
+          width:100%;
+        }
+    }
+    
+    #container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index:0;
+    }
+   
+    #cameraFeed {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        transform: scaleX(-1);
+    }
+
+    #capturedImage {
+        display: none;
+    }
+
+    #capturedImageDisplay {
+        display: none;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+  

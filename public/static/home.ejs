@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<title>WhatsApp  Free Live Chat Application</title>
+    
+    <%- include('nav.ejs') %>
+    <%- include('rightContainer.ejs') %>
+    <%- include('profilesidebar.ejs') %>
+    <%- include('addFriendSidebar.ejs') %>
+    <%- include('settingSidebar.ejs') %>
+    <%- include('addContact.ejs') %>
+    <%- include('message_model.ejs') %>
+    <%- include('loader.ejs') %>
+    <%- include('notify.ejs') %>
+    <%- include('messageIcon.ejs') %>
+    <%- include('message_model.ejs') %>
+    <script src="assets/javascript/triggerMessage.js"></script>
+<style>
+  html,
+  body {
+    min-height: 100%;
+  }
+  
+  #pages-container .swiper-slide {
+    height: 100%;
+  }
+  
+  #pages-container-inner {
+    overflow-x: hidden;
+    height: 100%;
+  }
+  #main-navigation{
+        display: none;
+        position:fixed;
+        top:0;
+        width:100%;
+   }
+  #main-navigation ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    font-weight: 600;
+    
+  }
+  #main-navigation ul .nav-link {
+    background:#008069;
+    color: #fff;
+    padding:1rem;
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;
+    filter: saturate(1.5);
+  }
+  
+  .links-container {
+    position: relative;
+    padding: 0;
+  }
+  
+  .swiper-scrollbar {
+    height: 3px;
+    background-color: transparent;
+    opacity: 1 !important;
+  }
+  
+  .swiper-scrollbar-drag {
+    background-color:#fff;
+    border-radius: 0;
+    height: 3px;
+  }
+  @media only screen and (max-width:1000px) {
+    #main-navigation{
+        display: contents;
+    }
+}
+</style>
+<script>
+    window.console = window.console || function(t) {};
+</script>
+</head>
+
+<body translate="no">
+    <div style="position: fixed;top:0;width: 100%;z-index:100">
+    <nav id="main-navigation">
+      <ul class="links-container">
+          <li class="nav-link active">
+            <svg fill="#ffffff" width="24px" height="24px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>chat1</title> <path d="M25.785 4.952h-19.57c-1.235 0-2.236 1.002-2.236 2.236v12.488c0 1.234 1.001 2.236 2.236 2.236h3.729l0.001 5.137 5.704-5.137h10.137c1.236 0 2.236-1.002 2.236-2.236v-12.488c-0.001-1.234-1.001-2.236-2.237-2.236zM10 13.969c-0.553 0-1-0.448-1-1 0-0.553 0.447-1 1-1 0.552 0 1 0.447 1 1 0 0.552-0.448 1-1 1zM14 13.927c-0.553 0-1-0.448-1-1 0-0.553 0.447-1 1-1 0.552 0 1 0.447 1 1 0 0.552-0.448 1-1 1zM18.020 13.948c-0.552 0-1-0.447-1-1 0-0.552 0.448-1 1-1 0.553 0 1 0.448 1 1s-0.448 1-1 1zM22 13.969c-0.553 0-1-0.448-1-1 0-0.553 0.447-1 1-1 0.552 0 1 0.447 1 1 0 0.552-0.448 1-1 1z"></path> </g></svg>
+            <span id='nav-link-chats' >Chats</span>
+            </li>
+          <li class="nav-link active">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19 8C20.6569 8 22 6.65685 22 5C22 3.34315 20.6569 2 19 2C17.3431 2 16 3.34315 16 5C16 6.65685 17.3431 8 19 8Z" fill="#ffffff"></path> <path d="M19.8 9.42C19.78 9.42 19.76 9.43 19.74 9.43C19.64 9.45 19.54 9.46 19.43 9.48C19.01 9.52 18.56 9.5 18.1 9.41C17.98 9.38 17.88 9.36 17.77 9.32C17.44 9.24 17.13 9.11 16.84 8.94C16.72 8.88 16.6 8.8 16.49 8.73C16.01 8.4 15.6 7.99 15.27 7.51C15.2 7.4 15.12 7.28 15.06 7.16C14.89 6.87 14.76 6.56 14.68 6.23C14.64 6.12 14.62 6.02 14.59 5.9C14.5 5.44 14.48 4.99 14.52 4.57C14.54 4.46 14.55 4.36 14.57 4.26C14.57 4.24 14.58 4.22 14.58 4.2C14.7 3.58 14.24 3 13.6 3H7.52C7.38 3 7.24 3.01 7.11 3.02C6.99 3.03 6.88 3.04 6.76 3.06C6.64 3.07 6.52 3.09 6.41 3.11C4 3.46 2.46 4.99 2.11 7.41C2.09 7.52 2.07 7.64 2.06 7.76C2.04 7.88 2.03 7.99 2.02 8.11C2.01 8.24 2 8.38 2 8.52V16.48C2 16.62 2.01 16.76 2.02 16.89C2.03 17.01 2.04 17.12 2.06 17.24C2.07 17.36 2.09 17.48 2.11 17.59C2.46 20.01 4 21.54 6.41 21.89C6.52 21.91 6.64 21.93 6.76 21.94C6.88 21.96 6.99 21.97 7.11 21.98C7.24 21.99 7.38 22 7.52 22H15.48C15.62 22 15.76 21.99 15.89 21.98C16.01 21.97 16.12 21.96 16.24 21.94C16.36 21.93 16.48 21.91 16.59 21.89C19 21.54 20.54 20.01 20.89 17.59C20.91 17.48 20.93 17.36 20.94 17.24C20.96 17.12 20.97 17.01 20.98 16.89C20.99 16.76 21 16.62 21 16.48V10.4C21 9.76 20.42 9.3 19.8 9.42ZM6.75 12.5H11.75C12.16 12.5 12.5 12.84 12.5 13.25C12.5 13.66 12.16 14 11.75 14H6.75C6.34 14 6 13.66 6 13.25C6 12.84 6.34 12.5 6.75 12.5ZM15.75 18H6.75C6.34 18 6 17.66 6 17.25C6 16.84 6.34 16.5 6.75 16.5H15.75C16.16 16.5 16.5 16.84 16.5 17.25C16.5 17.66 16.16 18 15.75 18Z" fill="#ffffff"></path> </g></svg>
+            <span id='nav-link-updates' >Updates</span>
+          </li>
+          <li class="nav-link active">
+            <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 927.963 927.963" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M32.347,216.691l89.916-90.743l179.605,179.605l-43.657,43.654c-13.083,13.083-13.083,34.296,0,47.38l212.836,212.837 c13.084,13.083,34.296,13.083,47.38,0l43.656-43.655l179.604,179.604l-90.329,90.33l0,0 c-28.976,24.163-65.832,34.376-101.38,31.464c0,0-124.896-0.352-337.028-212.482C0.818,442.553,0.47,317.657,0.47,317.657 C-2.442,282.109,8.184,245.665,32.347,216.691z M355.788,251.633c15.621-15.62,15.621-40.947,0-56.567L232.75,72.028 c-15.621-15.621-40.948-15.621-56.569,0l-32.527,32.527L323.259,284.16L355.788,251.633z M672.572,511.848 c-15.621-15.62-40.948-15.62-56.569,0l-32.527,32.527l179.605,179.604l32.527-32.527c15.62-15.62,15.62-40.946,0-56.567 L672.572,511.848z M645.134,274.11h-25.151v-89.794c0-13.807-11.193-25-25-25H476.276c-13.809,0-25.001,11.193-25.001,25v89.794 h-26.542c-21.587,0-33.026,25.52-18.662,41.635l110.794,124.296c4.972,5.578,11.816,8.365,18.662,8.365 c6.889,0,13.774-2.824,18.751-8.465l109.605-124.296C678.121,299.5,666.658,274.11,645.134,274.11z M812.06,74.782 c-4.976-5.642-11.862-8.465-18.752-8.465c-6.844,0-13.688,2.787-18.661,8.365L663.853,198.978 c-14.363,16.115-2.926,41.635,18.661,41.635h26.542v89.794c0,13.807,11.193,25,25,25h118.705c13.809,0,25-11.193,25-25v-89.794 h25.153c21.523,0,32.987-25.391,18.751-41.535L812.06,74.782z"></path> </g> </g> </g></svg>
+            <span id='nav-link-calls' >Calls</span>
+          </li>
+          
+      </ul>
+    </nav>
+</div>
+    <article id="pages-container">
+      <div class="swiper-scrollbar" style="opacity: 0; transition-duration: 400ms;margin-top: 3.4rem;">
+        <div class="swiper-scrollbar-drag" style="position: fixed;top: 55px;z-index: 200;transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;height: 3px"></div></div>
+        <article id="pages-container-inner" class="swiper-container-horizontal">
+            <div class="swiper-wrapper" style="height: 100vh;transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                <div class="swiper-slide swiper-slide-active" >
+                    <%- include('activeFriendsList.ejs')%>
+                </div>
+                <div class="swiper-slide" >
+                    <%- include('updates.ejs')%>
+                </div>
+                <div class="swiper-slide">
+                    <%- include('updates.ejs')%>
+                </div>
+                
+            </div>
+        </article>
+    </article>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script id="rendered-js">
+        var pagesContainer = new Swiper('#pages-container-inner', {
+            slidesPerView: 1,
+            watchSlidesProgress: true,
+        
+            scrollbar: '.swiper-scrollbar' 
+            
+        });
+        
+        
+        $('.nav-link').on('click', function () {
+            $(this).addClass('active');
+            pagesContainer.slideTo($('.nav-link').index($(this)));
+        });
+       
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+</body>
+     <script type='module' src="assets/home/javascript/home.js"></script>
+     <script src="assets/home/javascript/decl.js"></script>
+    
+   
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+        import { getMessaging, onMessage, getToken } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-messaging.js";
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyD4dH5kn-jcaBMbdX-lKM74BR0GyhF6L_o",
+            authDomain: "livechat-bdce9.firebaseapp.com",
+            projectId: "livechat-bdce9",
+            storageBucket: "livechat-bdce9.appspot.com",
+            messagingSenderId: "289406348911",
+            appId: "1:289406348911:web:39daccd16d48a4cd0f679a",
+            measurementId: "G-SPEVEL335G",
+            messagingSenderId: "289406348911",
+            vapidKey: "KEYBNHY5HI8-Rc-rrqaFoJENR2ONdzQCWy0C4-uanjFnR6VhGH8Lx10Bx-MA0HDAXnZYYvKqs6VhkoBoZXHH9t34ho",
+            messagingSW: "/firebase-messaging-sw.js",
+            messagingSWScope: "/",
+    };
+
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+            const messaging = getMessaging(app);
+            
+            if ('serviceWorker' in navigator) {
+                
+                    navigator.serviceWorker.getRegistrations()
+                        .then((registrations) => {
+                            if (registrations.length > 0) {
+                                
+                                console.log('Service Worker is already registered');
+                            } else {
+                        
+                            navigator.serviceWorker.register('/firebase-messaging-sw.js', { scope: '/' })
+                                .then((registration) => {
+                                    
+                                    console.log('Service Worker registered with scope:', registration.scope);
+                                })
+                                .catch((error) => {
+                                
+                                    console.error('Service Worker registration failed:', error);
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                        
+                            console.error('Error checking service worker registrations:', error);
+                        });
+            }
+        
+
+            if ('Notification' in window) {
+                if (Notification.permission === 'granted') {
+                    console.log('Notification permission already granted');
+                } else {
+                        Notification.requestPermission().then((permission) => {
+                            if (permission === 'granted') {
+                            getFCMTokenAndSendToServer();
+                            }
+                        });
+                    }
+            }
+            else {
+            
+                console.log('Notifications not supported in this browser');
+            }
+
+            function getFCMTokenAndSendToServer() {
+                getToken(messaging).then((token) => {
+                    if (token) {
+                    sendTokenToServer(token);
+                    } else{
+                        console.log('FCM Token not available');
+                    }
+                });
+            }
+
+            onMessage(messaging, (message) => {
+                alert(message);
+                console.log('Received message:', message);
+                // Display a notification to the user.
+            });
+            // messaging.onMessage((message) => {
+            // console.log('Received message:', message);
+            // // Display a notification to the user.
+            // });
+
+
+            function sendTokenToServer(token) {
+        
+                fetch('/store-fcm-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token: token }),
+                })
+                .then((response) => {
+                    if (response.ok) {
+                        console.log('Token sent to the server successfully');
+                    } else {
+                        console.error('Error sending token to the server');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error sending token to the server:', error);
+                });
+    }
+
+    </script>
+
+</html>
+
+
+
+

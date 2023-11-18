@@ -1,0 +1,108 @@
+#main_fram{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    filter: saturate(1.5);
+    z-index:10;
+    
+}
+
+
+#left_contanier{
+    
+    width:35%;    
+    z-index: 100;
+}
+#left_contanier_first_child{
+    background: #008069;
+    color: white;
+
+    height:70px;
+    /* position: fixed; */
+    border: solid 1px #d1d7db;
+    left:0;
+    top:0;
+    padding-left: 2rem;
+    width:100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+#left_container_header{
+    
+    padding-top: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+
+}
+#left_container_header_right_part{
+    margin-left: 5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+    float: right;
+    color: #54656f;
+
+}
+#left_container_search_bar{
+    padding: 1rem;
+    background: ghostwhite;
+    border: solid 1.5px  #e9edef; ;
+    
+}
+form.nosubmit {
+    border: none;
+    padding: 0;
+    background: #e9edef;
+    border-color:none;
+    border-radius: 10px;
+}
+input.nosubmit {
+     border: 1px solid #e9edef;
+     border-radius: 10px;
+     outline: none;
+     width: 100%;
+    
+     padding: 9px 4px 9px 40px;
+     background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+#notification{
+    padding: 0.333333rem;
+    background-color: #09ff20;
+    border-radius: 50%;
+    position: absolute;
+    top: 1rem;
+    margin-left: 1rem;
+    margin-top: 8px;
+}
+
+@media only screen and (max-width: 1000px) {
+    #main-navigation{
+        display: contents;
+    }
+    #left_container_search_bar{
+        display: none;
+    }
+    #left_contanier{
+       display: none;
+    }
+    #left_container_header{
+       align-items: center;  
+    
+    }
+    #left_contanier_first_child{
+       
+        background: #008069;
+        color: white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        padding: 0.5rem;
+       
+    }
+ }
+ 
+ 

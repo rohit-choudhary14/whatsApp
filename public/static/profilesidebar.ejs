@@ -1,0 +1,137 @@
+<style>
+    #main_panel_{
+        width:35%;
+        height:100%;
+        position: absolute;
+        z-index: 1;
+        top:0px;
+        left:-5000px;
+        bottom:0px;
+        transition: 1s left;
+        filter: saturate(1.5);
+        background: #e9edef;
+    }
+
+    
+    #edit_name_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } #edit_about_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #edit_about_container div:nth-child(1){
+       max-width:90%
+    }
+    #edit_about_container div:nth-child(2){
+       max-width:10%
+    }
+    #info_info{
+        padding:1rem;
+        font-size: 0.875rem;
+        display: block;
+        max-width:100%;
+     }
+     
+    @media only screen and (max-width: 1000px) {
+      #main_panel_{
+        width:100%;
+
+      }
+     #profile_pic_default_icon{
+        justify-content: center;
+     }
+     #profile_pic_default_icon svg{
+       height:100px;
+       width:100px;
+     }
+     #info_info{
+        max-width: 100%;
+     }
+
+    }
+</style>
+<div id="main_panel_">
+    <div style='display:flex;align-items: center; padding:1rem;background: #008069;'>
+        <svg viewBox="0 0 24 24" id='go_back_to_chat_screen' height="24" width="24" preserveAspectRatio="xMidYMid meet" class="text-white go_back_to_chat_screen" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M12,4l1.4,1.4L7.8,11H20v2H7.8l5.6,5.6L12,20l-8-8L12,4z"></path></svg>
+       
+        <h6 style='color:white;font-weight: 700;margin: 5px;'>Profile</h6>
+    </div>
+
+    <div  id="profile_pic_default_icon" style=' padding:2rem;display: flex;align-items: center; justify-content: center;'>
+      <div id='upload_profile_picture'>
+          <form id='user_profile_img_form'>
+            <input type='file' style="display: none;" onchange="upload_profile_picture('<%=id%>')" name="image" id='input_pofile_picture' accept="image/jpeg, image/png"/>
+          </form> 
+          <center>
+            <%if(profilePicture!=undefined && profilePicture!=null){%>
+               <img src="../../uploads/profile/pictures/<%=id%>.jpg" style="height:150px;width:150px;border-radius:50%;filter: none;object-fit: cover;"/>
+            <%}else { %>
+               <img src="data:image/png;base64,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">
+               <%}%>
+         </center>
+      </div>   
+      
+      </div>
+
+    <div style='padding:1rem;background-color: white;'>
+       <div>
+          <p>Your name</p>
+       </div>
+       <div id='edit_name_container'>
+          <p id='edit_name_value'><%=user_name%></p>
+          <svg viewBox="0 0 24 24" id='edit_name_icon' height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M3.95,16.7v3.4h3.4l9.8-9.9l-3.4-3.4L3.95,16.7z M19.75,7.6c0.4-0.4,0.4-0.9,0-1.3 l-2.1-2.1c-0.4-0.4-0.9-0.4-1.3,0l-1.6,1.6l3.4,3.4L19.75,7.6z"></path></svg>
+          <svg viewBox="0 0 24 24"  id='checkmark_name_icon' style='display:none' height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M9,17.2l-4-4l-1.4,1.3L9,19.9L20.4,8.5L19,7.1L9,17.2z"></path></svg>
+        
+         </div>
+               
+
+   </div>
+   <div id='info_info' >
+      <span>This is not your username or pin. 
+        This name will be visible to your WhatsApp contacts.</span>
+   </div>
+   <div style='padding:1rem;background-color: white;'>
+    <div>
+       <p>About</p>
+    </div>
+    <div id="edit_about_container">
+      <div>
+         <p id='edit_about_value'>
+            <% if (about !== undefined && about !== null) { %>
+               <%= about %>
+             <% } else { %>
+               NO ABOUT
+             <% } %>
+            
+          </p>
+      </div>
+       <div>
+         <svg viewBox="0 0 24 24"  id='edit_about_icon' height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M3.95,16.7v3.4h3.4l9.8-9.9l-3.4-3.4L3.95,16.7z M19.75,7.6c0.4-0.4,0.4-0.9,0-1.3 l-2.1-2.1c-0.4-0.4-0.9-0.4-1.3,0l-1.6,1.6l3.4,3.4L19.75,7.6z"></path></svg>
+         <svg viewBox="0 0 24 24"  id='checkmark_about_icon' style='display:none' height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M9,17.2l-4-4l-1.4,1.3L9,19.9L20.4,8.5L19,7.1L9,17.2z"></path></svg>
+         
+       </div>
+       
+    </div>
+   </div>
+
+   <div style="padding:1rem;font-size: 0.875rem;display: block;background: #e9edef;">
+     
+    </div>
+   
+</div>
+<script src="assets/javascript/upload_profile_picture.js"></script>
+<script src="assets/javascript/profilePictureProcessing.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded',function(){
+     
+      document.getElementById('upload_profile_picture').addEventListener('click',function(event){
+         const inputFile=document.getElementById('input_pofile_picture');
+         inputFile.click();
+         
+      })
+      
+   })
+</script>

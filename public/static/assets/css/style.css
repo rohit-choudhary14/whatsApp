@@ -1,0 +1,216 @@
+nav{
+    background-color: #00a884;
+    padding: 2rem;
+    color:white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top:0%;
+
+}
+#logo{
+    position:fixed;
+    top:12px;
+    left: 12px;
+}
+#logo img{
+   height:35px;
+   width:35px;
+}
+body {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background:#eeeeee;
+
+}
+#login_tab_parent{
+    padding: 8rem;
+}
+#login_tab{
+    /* position: absolute;
+    top:50px;
+    left:200px;
+    right:200px; */
+    margin-top: -2rem;
+    padding: 8rem;
+    box-shadow: 1px 1px 1px white;
+    background-color: #fff;
+    border-radius: 20px;
+    height:auto;
+    
+   
+}
+#login_tab div:nth-child(3) select{
+    outline: #00a884;
+    padding: 10px;
+    width: 255px;
+    border:solid 1px #00a884;
+ }
+ #login_tab div:nth-child(4) input:nth-child(1){
+    outline: none;
+    padding: 10px;
+    width: 50px;
+    border:solid 1px #00a884;
+    border-right-color: #fff;
+ }
+ #login_tab div:nth-child(4) input:nth-child(2){
+        outline:none;
+      
+        padding: 5px;
+        border:solid 1px #00a884;
+       
+     }
+ #login_tab div:nth-child(5) button{
+       width: 255px;
+       background: #00a884;
+       color:white;
+       border-radius: 10px;
+       outline:#00a884;
+       border:none;
+       padding:1rem;
+    }
+
+
+
+#parent_msg_gif{
+    padding:10rem;
+}
+@media only screen and (max-width: 1000px) {
+    #login_tab_parent{
+        padding: 1rem;
+        margin-top:10rem;
+    }
+    #login_tab{
+        
+        position: inherit;
+        padding: 2rem;
+        box-shadow: 1px 1px 1px white;
+        background-color: #fff;
+        border-radius: 0px;
+        height:100%;
+    }
+    #login_tab div:nth-child(3) select{
+       width:100%;
+       border:solid 1px #00a884;
+    }
+    #login_tab div:nth-child(4) input:nth-child(1){
+        outline:none;
+        width:50px;
+        padding: 5px;
+        border:solid 1px #00a884;
+        border-right-color: #fff;
+     }
+     #login_tab div:nth-child(4) input:nth-child(2){
+        outline:none;
+        width:100%;
+        padding: 5px;
+        border:solid 1px #00a884;
+       
+     }
+     #login_tab div:nth-child(5) button{
+        width: 100%;
+        background: #00a884;
+        color:white;
+        border-radius: 10px;
+        outline:#00a884;
+        border:none;
+        padding:0.6rem;
+     }
+     /* #overlay{
+      align-items: center;
+      
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top:13.5%;
+      left:50px;
+      right:50px;
+      font-size: 12px;
+      border-radius: 20px;
+      padding: 0.6rem;
+      z-index:-1;
+      
+
+        
+     } */
+     #mobile_group_images{
+        display: block;
+        
+    }
+    #mobile_group_images img:nth-child(2){
+        
+       margin-top: 13rem;
+    }
+    #footer{
+        
+        top:220%;
+        background-color: rgb(64, 64, 64);
+        
+    }
+    #parent_msg_gif{
+        padding:1rem;
+    }
+}
+
+#login_tab div span{
+     font-size: 20px;
+     color:rgb(17, 17, 17);
+}
+#login_tab div:nth-child(2) span{
+    font-size: 14px;
+    
+}
+
+#sontent_img_container{
+    padding: 1rem;
+    position: absolute;
+    z-index:-10;
+    opacity: 0;
+    animation: fadeIn1 4s ease-in-out 2s forwards;
+    
+}
+#voice_img_container{
+    padding: 1rem;
+    position: absolute; 
+    opacity: 0;
+    animation: fadeIn1 4s ease-in-out 8s forwards;
+    margin-top: 10rem;
+     z-index:-10;
+    
+}
+#pic_img_container{
+    padding: 1rem;
+    position: absolute; 
+    opacity: 0;
+    animation: fadeIn1 4s ease-in-out 10s forwards;
+    margin-top: 19rem;
+     z-index:-10;
+    
+}
+
+
+@keyframes fadeIn1 {
+    to {
+        opacity: 1;
+    }
+}
+#reply_img_container{
+    padding: 1rem;
+    position: absolute;
+    right:0px;
+    opacity: 0;
+    margin-top: 3rem;
+    z-index:-10;
+    animation: fadeIn2 4s ease-in-out 6s forwards;
+    
+}
+@keyframes fadeIn2 {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+

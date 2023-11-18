@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta https-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/chatStyle.css">
+
+</head>
+<%- include('rightContainer.ejs') %>
+<%- include('message_model.ejs') %>
+<%- include('loader.ejs') %>
+<%- include('viewprofile.ejs') %>
+<body>
+<nav id="chatting_profile_header">
+ 
+
+    <div>
+       <a href="/">
+         <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="text-white go_back_to_chat_screen" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M12,4l1.4,1.4L7.8,11H20v2H7.8l5.6,5.6L12,20l-8-8L12,4z"></path></svg>
+        </a>
+        
+        <%if(profilePicture!=undefined && profilePicture!=null){%>
+            <img src="/uploads/profile/pictures/<%=profilePicture%>" style="height:40px;width:40px;border-radius:50%;object-fit: cover;"/>
+        <%}else { %>
+           
+            <svg viewBox="0 0 212 212" height="40" width="40" preserveAspectRatio="xMidYMid meet" class="ln8gz9je ppled2lx" version="1.1" x="0px" y="0px" enable-background="new 0 0 212 212" xml:space="preserve"><path fill="#DFE5E7" class="background" d="M106.251,0.5C164.653,0.5,212,47.846,212,106.25S164.653,212,106.25,212C47.846,212,0.5,164.654,0.5,106.25 S47.846,0.5,106.251,0.5z"></path><g><path fill="#FFFFFF" class="primary" d="M173.561,171.615c-0.601-0.915-1.287-1.907-2.065-2.955c-0.777-1.049-1.645-2.155-2.608-3.299 c-0.964-1.144-2.024-2.326-3.184-3.527c-1.741-1.802-3.71-3.646-5.924-5.47c-2.952-2.431-6.339-4.824-10.204-7.026 c-1.877-1.07-3.873-2.092-5.98-3.055c-0.062-0.028-0.118-0.059-0.18-0.087c-9.792-4.44-22.106-7.529-37.416-7.529 s-27.624,3.089-37.416,7.529c-0.338,0.153-0.653,0.318-0.985,0.474c-1.431,0.674-2.806,1.376-4.128,2.101 c-0.716,0.393-1.417,0.792-2.101,1.197c-3.421,2.027-6.475,4.191-9.15,6.395c-2.213,1.823-4.182,3.668-5.924,5.47 c-1.161,1.201-2.22,2.384-3.184,3.527c-0.964,1.144-1.832,2.25-2.609,3.299c-0.778,1.049-1.464,2.04-2.065,2.955 c-0.557,0.848-1.033,1.622-1.447,2.324c-0.033,0.056-0.073,0.119-0.104,0.174c-0.435,0.744-0.79,1.392-1.07,1.926 c-0.559,1.068-0.818,1.678-0.818,1.678v0.398c18.285,17.927,43.322,28.985,70.945,28.985c27.678,0,52.761-11.103,71.055-29.095 v-0.289c0,0-0.619-1.45-1.992-3.778C174.594,173.238,174.117,172.463,173.561,171.615z"></path><path fill="#FFFFFF" class="primary" d="M106.002,125.5c2.645,0,5.212-0.253,7.68-0.737c1.234-0.242,2.443-0.542,3.624-0.896 c1.772-0.532,3.482-1.188,5.12-1.958c2.184-1.027,4.242-2.258,6.15-3.67c2.863-2.119,5.39-4.646,7.509-7.509 c0.706-0.954,1.367-1.945,1.98-2.971c0.919-1.539,1.729-3.155,2.422-4.84c0.462-1.123,0.872-2.277,1.226-3.458 c0.177-0.591,0.341-1.188,0.49-1.792c0.299-1.208,0.542-2.443,0.725-3.701c0.275-1.887,0.417-3.827,0.417-5.811 c0-1.984-0.142-3.925-0.417-5.811c-0.184-1.258-0.426-2.493-0.725-3.701c-0.15-0.604-0.313-1.202-0.49-1.793 c-0.354-1.181-0.764-2.335-1.226-3.458c-0.693-1.685-1.504-3.301-2.422-4.84c-0.613-1.026-1.274-2.017-1.98-2.971 c-2.119-2.863-4.646-5.39-7.509-7.509c-1.909-1.412-3.966-2.643-6.15-3.67c-1.638-0.77-3.348-1.426-5.12-1.958 c-1.181-0.355-2.39-0.655-3.624-0.896c-2.468-0.484-5.035-0.737-7.68-0.737c-21.162,0-37.345,16.183-37.345,37.345 C68.657,109.317,84.84,125.5,106.002,125.5z"></path></g></svg>
+        <%}%>
+    </div>
+    <div style="padding: 0.5rem;">
+        
+        <span  id="chatting_user_header_name_section"><%=Xname%></span>  
+        <div style="display: flex;justify-content:flex-start;flex-wrap: wrap;align-content: flex-end;font-size: 12px;">
+            <span id="user_status"></span>
+        </div>
+        
+       
+    </div>
+    <div>
+        <svg viewBox="0 0 24 24"  height="24" width="24"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" preserveAspectRatio="xMidYMid meet" class="dropdown-toggle" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M12,7c1.104,0,2-0.896,2-2c0-1.105-0.895-2-2-2c-1.104,0-2,0.894-2,2 C10,6.105,10.895,7,12,7z M12,9c-1.104,0-2,0.894-2,2c0,1.104,0.895,2,2,2c1.104,0,2-0.896,2-2C13.999,9.895,13.104,9,12,9z M12,15 c-1.104,0-2,0.894-2,2c0,1.104,0.895,2,2,2c1.104,0,2-0.896,2-2C13.999,15.894,13.104,15,12,15z"></path></svg>
+           
+    </div>
+    
+</nav>
+<div id='chatting_profile_body'>
+   
+
+   <div id="info_ab_chat_enc">
+    <div>
+       <span>
+        <a href="/">
+         <svg viewBox="0 0 10 12" height="12" width="10" preserveAspectRatio="xMidYMid meet" class="" version="1.1"><path d="M5.00847986,1.6 C6.38255462,1.6 7.50937014,2.67435859 7.5940156,4.02703389 L7.59911976,4.1906399 L7.599,5.462 L7.75719976,5.46214385 C8.34167974,5.46214385 8.81591972,5.94158383 8.81591972,6.53126381 L8.81591972,9.8834238 C8.81591972,10.4731038 8.34167974,10.9525438 7.75719976,10.9525438 L2.25767996,10.9525438 C1.67527998,10.9525438 1.2,10.4731038 1.2,9.8834238 L1.2,6.53126381 C1.2,5.94158383 1.67423998,5.46214385 2.25767996,5.46214385 L2.416,5.462 L2.41679995,4.1906399 C2.41679995,2.81636129 3.49135449,1.68973395 4.84478101,1.60510326 L5.00847986,1.6 Z M5.00847986,2.84799995 C4.31163824,2.84799995 3.73624912,3.38200845 3.6709675,4.06160439 L3.6647999,4.1906399 L3.663,5.462 L6.35,5.462 L6.35111981,4.1906399 C6.35111981,3.53817142 5.88169076,2.99180999 5.26310845,2.87228506 L5.13749818,2.85416626 L5.00847986,2.84799995 Z" fill="currentColor"></path></svg>
+        </a>
+        </span>
+        <div>
+          Messages to yourself are end-to-end encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them. Click to learn more.
+        </div>
+   </div>
+   </div>
+
+   <!-- chatting body -->
+   <div id="chatting_body_outgoing">
+     
+       
+   </div>
+   
+
+   
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+<script src="/assets/javascript/triggerMessage.js"></script>
+<script src="/assets/javascript/triggerLoader.js"></script>
+<script src="/assets/javascript/closeLoader.js"></script>
+
+<audio id="audioPlayer" style="display: none;">
+    <source src="/assets/mp3/sentMessage.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<audio id="audioPlayer_reciveMessage" style="display: none;">
+    <source src="/assets/mp3/reciveMessage.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+</div>
+<div id='trigger_message_bottom'>
+    <div>
+      <svg viewBox="0 0 24 24" style='margin-top:3px;margin-left:10px' height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><path fill="currentColor" d="M9.153,11.603c0.795,0,1.439-0.879,1.439-1.962S9.948,7.679,9.153,7.679 S7.714,8.558,7.714,9.641S8.358,11.603,9.153,11.603z M5.949,12.965c-0.026-0.307-0.131,5.218,6.063,5.551 c6.066-0.25,6.066-5.551,6.066-5.551C12,14.381,5.949,12.965,5.949,12.965z M17.312,14.073c0,0-0.669,1.959-5.051,1.959 c-3.505,0-5.388-1.164-5.607-1.959C6.654,14.073,12.566,15.128,17.312,14.073z M11.804,1.011c-6.195,0-10.826,5.022-10.826,11.217 s4.826,10.761,11.021,10.761S23.02,18.423,23.02,12.228C23.021,6.033,17.999,1.011,11.804,1.011z M12,21.354 c-5.273,0-9.381-3.886-9.381-9.159s3.942-9.548,9.215-9.548s9.548,4.275,9.548,9.548C21.381,17.467,17.273,21.354,12,21.354z  M15.108,11.603c0.795,0,1.439-0.879,1.439-1.962s-0.644-1.962-1.439-1.962s-1.439,0.879-1.439,1.962S14.313,11.603,15.108,11.603z"></path></svg>
+       
+        <input type="file" id='take_input_from_gallery' style='display: none;'/>
+        <textarea  rows="1" id="text_message" data-v="<%=x_id%>"   placeholder="Message"></textarea>
+      
+      <svg width="24" height="24" id="startCameraButton"style='margin-top:3px;margin-right:10px' viewBox="0 0 20 19" fill="#6c757db5" xmlns="http://www.w3.org/2000/svg"><path d="M9.9999 13.04C8.16657 13.04 6.67479 11.5482 6.67479 9.71486C6.67479 7.88153 8.16657 6.38976 9.9999 6.38976C11.8332 6.38976 13.325 7.88153 13.325 9.71486C13.325 11.5482 11.8332 13.04 9.9999 13.04Z" fill="var(--attachment-type-camera-color)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.606 1.6763C14.9347 2.23849 15.5121 2.60821 16.1634 2.60821H16.2429C18.3177 2.60821 20 4.29014 20 6.36531V14.8157C20 16.8902 18.3177 18.5725 16.2429 18.5725H3.7571C1.68226 18.5725 0 16.8902 0 14.8157V6.36531C0 4.29014 1.68226 2.60821 3.7571 2.60821H3.83661C4.48792 2.60821 5.06535 2.23849 5.39398 1.6763C5.98035 0.673833 7.06697 0 8.3126 0H11.6874C12.933 0 14.0193 0.673833 14.606 1.6763ZM9.9999 4.73333C7.25322 4.73333 5.01837 6.96818 5.01837 9.71486C5.01837 12.4615 7.25322 14.6964 9.9999 14.6964C12.7466 14.6964 14.9814 12.4615 14.9814 9.71486C14.9814 6.96818 12.7466 4.73333 9.9999 4.73333Z" fill="var(--attachment-type-camera-color)"></path></svg>
+   
+    </div>
+    <div style='pointer-events: none;opacity: 0.7;' id='message_counter_div'>
+     
+          <svg viewBox="0 0 24 24"   id="applyMessage" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><path fill="currentColor" d="M1.101,21.757L23.8,12.028L1.101,2.3l0.011,7.912l13.623,1.816L1.112,13.845 L1.101,21.757z"></path></svg>
+  
+    </div>
+    
+</div>
+<div id="container">
+    <video id="cameraFeed" autoplay></video>
+    <canvas id="capturedImage"></canvas>
+    <img id="capturedImageDisplay" alt="Captured Image">
+</div>
+<div id='action_buttons'>
+    <div>
+        <svg width="30px" height="30px"  id='access_from_gallery'viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="si-glyph si-glyph-image" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>805</title> <defs> </defs> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g transform="translate(0.000000, 2.000000)" fill="#434343"> <path d="M13.438,11.944 L2.557,11.944 C1.163,11.944 0.029,10.781 0.029,9.353 L0.029,2.603 C0.029,1.173 1.164,0.012 2.557,0.012 L13.438,0.012 C14.831,0.012 15.965,1.173 15.965,2.603 L15.965,9.353 C15.965,10.781 14.83,11.944 13.438,11.944 L13.438,11.944 Z M2.237,0.979 C1.537,0.979 0.965,1.593 0.965,2.35 L0.965,9.668 C0.965,10.425 1.537,11.039 2.237,11.039 L13.754,11.039 C14.456,11.039 15.027,10.425 15.027,9.668 L15.027,2.35 C15.027,1.593 14.456,0.979 13.754,0.979 L2.237,0.979 L2.237,0.979 Z" class="si-glyph-fill"> </path> <ellipse cx="5.471" cy="3.461" rx="1.471" ry="1.461" class="si-glyph-fill"> </ellipse> <path d="M11.234,3.037 L13.994,9.988 L2.021,9.988 L5.497,5.98 L8.614,6.924 L11.234,3.037 Z" class="si-glyph-fill"> </path> </g> </g> </g></svg>
+        <svg fill="#434343" width="50px" height="50px" id="takePictureButton"viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M155.676 1349.19v337.3c0 42.99 34.849 77.83 77.838 77.83h337.297V1920H233.514C104.548 1920 0 1815.45 0 1686.49v-337.3h155.676Zm1764.324 0v337.3c0 128.96-104.55 233.51-233.51 233.51h-337.3v-155.68h337.3c42.99 0 77.83-34.84 77.83-77.83v-337.3H1920ZM960 544.865c229.27 0 415.14 185.862 415.14 415.135 0 229.27-185.87 415.14-415.14 415.14-229.273 0-415.135-185.87-415.135-415.14 0-229.273 185.862-415.135 415.135-415.135ZM1686.49 0C1815.45 0 1920 104.548 1920 233.514v337.297h-155.68V233.514c0-42.989-34.84-77.838-77.83-77.838h-337.3V0ZM570.811 0v155.676H233.514c-42.989 0-77.838 34.849-77.838 77.838v337.297H0V233.514C0 104.548 104.548 0 233.514 0h337.297Z"></path> </g></svg>
+        <svg width="30px" height="30px"id='close_camera' viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#434343"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>cross-square</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-204.000000, -1035.000000)" fill="#434343"> <path d="M224.95,1046.05 C224.559,1045.66 223.926,1045.66 223.536,1046.05 L220,1049.59 L216.464,1046.05 C216.074,1045.66 215.441,1045.66 215.05,1046.05 C214.66,1046.44 214.66,1047.07 215.05,1047.46 L218.586,1051 L215.05,1054.54 C214.66,1054.93 214.66,1055.56 215.05,1055.95 C215.441,1056.34 216.074,1056.34 216.464,1055.95 L220,1052.41 L223.536,1055.95 C223.926,1056.34 224.559,1056.34 224.95,1055.95 C225.34,1055.56 225.34,1054.93 224.95,1054.54 L221.414,1051 L224.95,1047.46 C225.34,1047.07 225.34,1046.44 224.95,1046.05 L224.95,1046.05 Z M234,1063 C234,1064.1 233.104,1065 232,1065 L208,1065 C206.896,1065 206,1064.1 206,1063 L206,1039 C206,1037.9 206.896,1037 208,1037 L232,1037 C233.104,1037 234,1037.9 234,1039 L234,1063 L234,1063 Z M232,1035 L208,1035 C205.791,1035 204,1036.79 204,1039 L204,1063 C204,1065.21 205.791,1067 208,1067 L232,1067 C234.209,1067 236,1065.21 236,1063 L236,1039 C236,1036.79 234.209,1035 232,1035 L232,1035 Z" id="cross-square" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+    </div>
+   
+</div>
+<div id='clear_selected_image'>
+    <svg viewBox="0 0 24 24"  height="24" width="24" preserveAspectRatio="xMidYMid meet" class="text-white" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M12,4l1.4,1.4L7.8,11H20v2H7.8l5.6,5.6L12,20l-8-8L12,4z"></path></svg>
+    
+</div>
+<div id='selected_img_model'>
+    <div>
+       <img id="selectedImage" src="" alt="Selected Image">
+    </div>
+</div>
+<div id='slide_up'>
+    <svg width="24px" height="24px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.5 6.073l6.854 6.854-0.707 0.707-6.147-6.147-6.146 6.146-0.707-0.707 6.853-6.853zM8.5 2.644l6.146 6.146 0.707-0.707-6.853-6.854-6.854 6.854 0.708 0.707 6.146-6.146z" fill="#000000"></path> </g></svg>
+</div>
+<div id='slide_down'>
+    <svg width="24px" height="24px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" transform="matrix(1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.5 6.073l6.854 6.854-0.707 0.707-6.147-6.147-6.146 6.146-0.707-0.707 6.853-6.853zM8.5 2.644l6.146 6.146 0.707-0.707-6.853-6.854-6.854 6.854 0.708 0.707 6.146-6.146z" fill="#000000"></path> </g></svg>
+</div>
+</body>
+
+ 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.finger/0.1.6/jquery.finger.min.js" integrity="sha512-VYeIPvbfw5QCp98PrMPRE/9DhuoGgfoFA8k89/n00apWytNqhPHOhl2XlltgLw/lDvbejPnjvlgk9dHHgMmIeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.finger/0.1.6/jquery.finger.js" integrity="sha512-W6nkm43r1uifBsMHIhEvew5IZWsZk9PU8dMx4aylFZR9hqKL/Tf6HchdWbICxAwiIGSKqfuV/qRUpYCvqJ1EdQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script  src="/assets/javascript/variable.js"></script>
+<script  type="module" src="/assets/javascript/main.js"></script>
+
+<script>
+    let parent=document.getElementById('chatting_body_outgoing');
+    const user_id="<%=id%>";
+    const sender_id="<%=id%>";
+    const Xid="<%=x_id%>";
+    const socket = io('/', {
+            query: {user_id,Xid}
+    }); 
+    socket.on('is_online',function(msg){
+
+      document.getElementById('user_status').innerText=msg;
+    })   
+</script>
+</html>

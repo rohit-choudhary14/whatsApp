@@ -1,0 +1,52 @@
+<style>
+     #updates_header{
+        display: grid;
+        
+        padding: 1rem;
+    }
+    #updates_header div:nth-child(1){
+        display: flex;
+        justify-content: space-between;
+        /* padding: 1rem; */
+        font-size:17px;
+        font-weight: 600;
+    }
+    .svg-circleplus { 
+        height: 20px;
+        stroke: #008069;
+        filter: saturate(1.5);
+     }
+   
+</style>
+
+<div id='updates_header'>
+    <div>
+        <span>Status</span>
+        <span>
+            <svg viewBox="0 0 24 24"  height="24" width="24"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" preserveAspectRatio="xMidYMid meet" class="dropdown-toggle" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M12,7c1.104,0,2-0.896,2-2c0-1.105-0.895-2-2-2c-1.104,0-2,0.894-2,2 C10,6.105,10.895,7,12,7z M12,9c-1.104,0-2,0.894-2,2c0,1.104,0.895,2,2,2c1.104,0,2-0.896,2-2C13.999,9.895,13.104,9,12,9z M12,15 c-1.104,0-2,0.894-2,2c0,1.104,0.895,2,2,2c1.104,0,2-0.896,2-2C13.999,15.894,13.104,15,12,15z"></path></svg>
+        </span>
+    </div>
+    
+    
+</div>
+<div>
+    <div style="display: flex;align-items: center;justify-content: start; padding: 1rem;">
+      <div style="display: contents">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVR4nO1Za2hcRRS+KD7wV/GBpG1eVLGi4Aul/SGCP/2nIpY8iDRWKmqlUDC+qPhoWqxFEJuWImpa22Be7UrTlloFA1FCRFK3D1P2TtydubPZzWtzb3bv3cc9cm6yYbO76c7cfdgf+eCQu3eGO983c86ZMxNFWcUqVlE0AOBmQoObCQu+p1Leq1J+SWV8mjAtjobPKtW82IZ9SCC4CQBuUv5vXKO0mlBtr8o4JYyDpAVUqrWPBQLrK058TNPuIZQfJoxbLohnm6Uy3nGVsbsrQp6wYIPK+FQJiC8zlfFJQvmWshEfGYFbCNWOlJo4ybVDOFZJyTPG7lApH6gAeVhcjdM4ZknI42xUkjxZMu281+u9tWgBsm7DQmGI6AZY8QTYtu0YPuM7NhGWXYmOosiPM9YoOti4FoSIMQ+FgH2wr7AIyl92RZ5SehehPCxKPmZaIIqoaQmLUBmfcpViF/O80CBzAjOfuxKGjCt9LUUed0fRTYpOhMAt6ERIVITlY6xGYva1vaKzg8HpFrO6xCpQrV2IPBZZWKcIfhTiiYRrAVY84XxD0I0oFo0Cs49VpfCsQMq2XQtI2bawADSfnz9VWACWu5USkJITQBhvKyhApbxPRgC6QSVciCxYt4AAzSsjAAPRLWbndEkB2sXCAiRKZRy8mDQaCIbkBFAeFogBuUMKEnCTSnHlVDn3QTPLIgD/Rk1TmDz2JUwrjwA3p600EZGVWNi8XJEHIReSCeJsEWiB4ATM6rqTYTDFouEzBiy2pfu5GYMIBbFEGl1JBJovwJZZZpvb7xORNCqzkYkIKRFxcL7L+DuFBQSCm8pBvhQifJr2pGgx53dDWgtNwsyc7hxuEsnk0pESn/EdtmGfdP9hMgb7Rrqh8Zf98Ny5j+DFn9th19A34LnyR74A/lf4Ng9LVxnyoekZqao0Frfg0z+74IH+7VDf+2pee+H8HhgmVzPH2aOU8kCzkHFCYFriR0lE0k7B9t8Prki8PsOe+GknDPq8OJ7p9/vXCQtwVoHxjuuR5+EpSKVSIIsDl07mJfvwqTdhQ9+2nPfPDLTBZf/4QUUWfr//znyHesfXw5OOb8uCR6dh48nXc0g+dOoNsMGGD/86llfcY563P1DcAO8qswWg22Ad7waH/zmbl+Ajnh1O+yejXXnb63paC29gK4pg/FDm7Mtcn2Rj29BXOW7zqGcHPH2mzWn/3Nvn/EbLdKe67q1Q29+yxpUAPIeqlPens00xeP7Xz3LcZiWk3QnJ13S9ArU/tGx0vQp40eqj7LQVj0MxaBr8YkkAzvDHoydg39898OVlj9N+QRt1fqM9e+79JfLVx1ug5mhjlVIMCIHbjWj0YjECkLBoDNRlkF9/tDms7N5dmn9JzRrGgWQyKZ8/AWA4PCYkoC6T/LFmWPt90xGllIhEIvcb0eiom1Ta8Nv+HAEbFt0p220c8p2N5r2dTfVKOWAYxuO6MT8UTySSogKCsRnYPLArf7rsXk5+XWcTVH3X8JpSbmCmmolEtkb0+bMx06SmFY8lkkk7o5izTcuKYVtE18/0XBt8t7639cr1yOPMV33b0KrcqLhv4K3b6ntbd+ImlR2w6PNlc5tyoLa/ZU3tieYHq49vWav8+FLh+89VKDcO/gOOCw6C8D7s4QAAAABJRU5ErkJggg==">
+    </div>
+      <div style='margin-left:10px'>
+        <div>
+            <span>My status</span>
+        </div>
+        <div style="margin-top:-5px">
+            <span style='font-size: 13px;'>Tap to add status update</span>
+        </div>
+        
+       </div> 
+        
+    </div>
+   
+</div>
+<div>
+    <hr>
+</div>

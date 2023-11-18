@@ -1,0 +1,39 @@
+<style>
+    #overlay{
+        position: fixed;
+        z-index: 1000;
+        max-width: 230px;
+        left: 0;
+        right:0;
+        bottom:-300px;
+        font-size: 14px;
+        margin: auto;
+        background-color:whitesmoke;
+        color:#111;
+        align-items: center;
+        border-radius: 40px;
+        padding: 1rem;
+        z-index: 200;
+        border-radius: 40px;
+        transition: 1s bottom;
+        
+}
+
+@media only screen and (max-width: 1000px) {
+    #overlay{
+        max-width:none;
+        width: 90%;
+        left: 0;
+        right: 0;
+    }
+
+    }
+
+
+</style>
+<div class="d-flex justify-content-center">
+    <center>
+        <div id='overlay'>
+     </div>
+     </center>
+</div>

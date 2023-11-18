@@ -1,0 +1,33 @@
+<style>
+    #active_friends_chat_list_parent{
+       margin-top:10rem;
+        width:35%; 
+    }
+    #active_friends_chat_list_parent div{
+        padding:0.5rem;
+        display: flex;
+        width:100%;
+     
+    }
+    @media only screen and (max-width: 1000px) {
+        
+        #active_friends_chat_list_parent{
+             margin-top:0rem;
+            width:100%;
+        }
+
+
+    }
+   
+    
+</style>
+<body>
+<div id="active_friends_chat_list_parent">  
+</div>
+</body>
+
+<script src="assets/javascript/activeFriendList.js"></script>
+<script src="assets/javascript/triggerLoader.js"></script>
+<script>
+   activeFreiendList("<%=id%>"); 
+</script>
