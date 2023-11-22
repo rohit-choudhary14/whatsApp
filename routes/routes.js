@@ -14,6 +14,7 @@ app.post('/store-fcm-token', config.authenticateToken,config.storeFcmToken,async
 });
 app.get("/",config.authenticateToken,config.FetchUser,(req,res)=>{
     if (req.user) {
+        console.log(req.userName)
         res.render('home',{id:req.user.id,user_name:req.userName,about:req.userAbout,profilePicture:req.profilePicture});
     }
     else{

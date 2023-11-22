@@ -16,4 +16,9 @@ const setting_icon=document.getElementById('setting_icon');
 const loader=document.getElementById('loader');
 const switchReceviedRequest=document.getElementById("switchReceviedRequest");
 const switchgetFriendList=document.getElementById("switchgetFriendList");
-       
+const input_profile_picture=document.getElementById("input_profile_picture");
+const add_friend_default_icon_parent=document.getElementById("add_friend_default_icon_parent");
+const go_back_to_chat_screen_setting_sidebar=document.getElementById('go_back_to_chat_screen_setting_sidebar');
+const navigate_to_user_default=document.getElementById('navigate_to_user_default');
+const searchSettings=document.getElementById('serach_bar');
+const active_friends_chat_list_parent=document.getElementById("active_friends_chat_list_parent");

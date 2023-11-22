@@ -1,26 +1,23 @@
-/* making path to find user login model*/
-const path=require("path");
-const direname=path.join(__dirname,"../");
-const toModel=path.join(direname,"/model/addFriendModel/");
-const addFriend=require(`${toModel}`);
+
+const {getDatabase}=require("../db_connect/mongooseConnect");
 const recivedRequest = async(req,res,next)=>{
     try{
-        
-        // find logged user details
+        const DB=getDatabase();
+        const addFriends = DB.collection("addFriends");
+     
         let logged_user_id=req.user.id;
         
-        let result=await addFriend.find(
+        let result=await addFriends.find(
         {
            reciver_user_id:logged_user_id,friend_status:0
         }
-        ,{
-            sender_user_name: 1,reciver_user_id:1,friend_status:1,_id:1
-        }
-        )
-        if(result){
+        )  .toArray();
+        if (result && result.length > 0) {
+            console.log(result);
             const jsonResult = JSON.stringify(result);
             req.queryResult = jsonResult;
         }else{
+            req.queryResult =null;
             req.message="Something went wrong";
         }
         return next();

@@ -1,8 +1,22 @@
-const mongoose=require('mongoose');
+const { MongoClient,ObjectId } = require("mongodb");
+const uri = "mongodb+srv://kartikjaat5765:b3sUEcy91SW1Zu0i@cluster0.nii9s5d.mongodb.net/?retryWrites=false&w=majority";
 
-const connection =()=>{
-    mongoose.connect("mongodb://127.0.0.1:27017/Chatapplication").then(()=>{
-        console.log("connections is succefully done");
-    })
+let database;
+
+async function connect() {
+    const client = new MongoClient(uri);
+
+    try {
+        await client.connect();
+        console.log("Connected to MongoDB Atlas");
+        database = client.db("Chatapplication");
+    } catch (error) {
+        console.error("Error connecting to MongoDB Atlas:", error);
+    }
 }
-module.exports={connection};
+
+function getDatabase() {
+    return database;
+}
+
+module.exports = { connect, getDatabase,ObjectId  };

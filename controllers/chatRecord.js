@@ -1,21 +1,17 @@
-/* making path to find user login model*/
-const path=require("path");
-const direname=path.join(__dirname,"../");
-const toModel=path.join(direname,"/model/addFriendModel/");
-const toModelWithLogin=path.join(direname,"/model/updateUserDetails/")
-const FetchUserDetails=require(`${toModelWithLogin}`);
-const addFriend=require(`${toModel}`);
+const { getDatabase,ObjectId} = require("../db_connect/mongooseConnect");
 const chatRecord = async(req,res,next)=>{
     try{
-        
+        const DB = getDatabase();
+        const addFriends = DB.collection("addFriends");
+        const FetchUserDetails = DB.collection("logins");
         // find logged user details
         let logged_user_id=req.user.id;
         let X_user_id=req.params.id;
-        let result=await addFriend.findOne
+        let result=await addFriends.findOne
         (
           {sender_id: logged_user_id, reciver_user_id:X_user_id,friend_status: 1}
         )
-        const userData=await FetchUserDetails.findOne({_id:X_user_id});
+        const userData=await FetchUserDetails.findOne({_id:new ObjectId(X_user_id)});
                 
         if(result!=null){
             let friendFullName=result.sender_want_to_add_fname+result.sender_want_to_add_lname;
@@ -24,7 +20,7 @@ const chatRecord = async(req,res,next)=>{
             req.userMobile=userData.mobile_number;
            
         }else{
-            let result=await addFriend.findOne
+            let result=await addFriends.findOne
             (
               {sender_id: X_user_id, reciver_user_id:logged_user_id,friend_status: 1}
             )

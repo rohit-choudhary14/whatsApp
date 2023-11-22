@@ -1,12 +1,8 @@
-/* making path to find user login model*/
-const path=require("path");
-const direname=path.join(__dirname,"../");
-const toModel=path.join(direname,"/model/chatModel/");
-
-const chatModel=require(`${toModel}`);
+const { getDatabase } = require("../db_connect/mongooseConnect");
 const chatController = async(req,res,next)=>{
     try{
-        
+            const DB = getDatabase();
+            const chatModel = DB.collection("chats");
             const sClassName= req.body.sClassName;
             const rClassName=  req.body.rClassName;
             const reciverId= req.body.reciverId;
@@ -23,9 +19,9 @@ const chatController = async(req,res,next)=>{
                     };
                     const timeOfMessage = new Intl.DateTimeFormat('en-US', options).format(time);
                     const body={sClassName,rClassName,message,senderId,reciverId,timeOfMessage,time,newFileName};
-                    let data=new chatModel(body);
-                    let result=await data.save();
-                    if(result){
+                    let data=await chatModel.insertOne(body);
+                    
+                    if(data){
                         req.message="Message sent successfully";
                         req.successcode=true;
                     }

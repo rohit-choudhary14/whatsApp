@@ -1,5 +1,5 @@
 require('dotenv').config({ path: 'process.env' });
-const {connection}=require("./db_connect/mongooseConnect");
+const {connect }=require("./db_connect/mongooseConnect");
 const {app}=require("./express/initExpress");
 const {sendPushNotifications}=require("./push_notification/push_notification");
 const {initializeSocket}=require("./socket/socket")
@@ -16,8 +16,8 @@ const server = https.createServer(options, app);
 require('./routes/routes');
 const PORT =process.env.PORT||9000;
 server.listen(PORT, () => {
-  connection();
+  connect();
   initializeSocket(server);
   console.log(`Server listening on port ${PORT}`);
-  sendPushNotifications();
+  // sendPushNotifications();
 });

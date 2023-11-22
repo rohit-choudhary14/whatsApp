@@ -1,7 +1,8 @@
 <style>
     #active_friends_chat_list_parent{
-       margin-top:10rem;
-        width:35%; 
+       margin-top:5rem;
+        width:35%;
+        z-index:1; 
     }
     #active_friends_chat_list_parent div{
         padding:0.5rem;
@@ -22,12 +23,6 @@
     
 </style>
 <body>
-<div id="active_friends_chat_list_parent">  
+<div id="active_friends_chat_list_parent" data-id="<%=id%>">  
 </div>
 </body>
-
-<script src="assets/javascript/activeFriendList.js"></script>
-<script src="assets/javascript/triggerLoader.js"></script>
-<script>
-   activeFreiendList("<%=id%>"); 
-</script>

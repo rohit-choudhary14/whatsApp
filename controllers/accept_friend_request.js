@@ -1,16 +1,14 @@
-/* making path to find user login model*/
-const path=require("path");
-const direname=path.join(__dirname,"../");
-const toModel=path.join(direname,"/model/addFriendModel/");
-const addFriend=require(`${toModel}`);
+
+const {getDatabase}=require("../db_connect/mongooseConnect");
 const accept_request = async(req,res,next)=>{
     try{
         
-      
-        let id=req.body.id;
+        const DB=getDatabase();
+        const addFriends = DB.collection("addFriends");
+        let id=req.body.mobile_number;
        
-        let result=await addFriend.updateOne(
-            {_id:id},{ $set: { friend_status:1 }}
+        let result=await addFriends.updateOne(
+            {mobile_number:id},{ $set: { friend_status:1 }}
         )
         if(result){
             req.message="Friend request accepted";
